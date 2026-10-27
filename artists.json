@@ -5,12 +5,21 @@
       "slug": "marcos-acosta",
       "name": "Marcos Acosta",
       "aliases": [],
-      "one_liner": "Argentine-born Denver landscape painter (b. 1980); K Contemporary solo 'Fragile Thought' (2026), Denver Post feature, Arvada Center group show.",
+      "one_liner": "Argentine-born, Denver-based landscape painter and draftsman; K Contemporary solo 2026, RedLine resident 2026-2028, Arvada Center show.",
       "affiliations": [
         "K Contemporary",
         "RedLine Contemporary Art Center (current residents)"
       ],
       "momentum": "rising",
+      "medium": [
+        "painting",
+        "drawing",
+        "sculpture",
+        "engraving",
+        "video",
+        "installation"
+      ],
+      "based_in": "Denver, Colorado",
       "priority": 5,
       "first_seen": "2026-10-26",
       "last_updated": "2026-10-26",
@@ -33,16 +42,7 @@
           "context": "Current RedLine resident artist (2025-2027/2026-2028 cohorts)",
           "first_seen": "2026-10-26"
         }
-      ],
-      "medium": [
-        "painting",
-        "drawing",
-        "sculpture",
-        "engraving",
-        "video",
-        "installation"
-      ],
-      "based_in": "Denver, Colorado"
+      ]
     },
     {
       "slug": "sterling-crispin",

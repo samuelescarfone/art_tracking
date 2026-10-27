@@ -10,6 +10,7 @@ import queue
 import threading
 
 import anthropic
+from dotenv import load_dotenv
 from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import StreamingResponse
 
@@ -19,6 +20,8 @@ from tracker.state import Registry
 from tracker.storage import get_store
 
 HEARTBEAT_SECONDS = 10
+
+load_dotenv()  # local dev: picks up ADMIN_TOKEN / CLAUDE_KEY from .env (no-op on Vercel)
 
 app = FastAPI(title="Art Tracker")
 

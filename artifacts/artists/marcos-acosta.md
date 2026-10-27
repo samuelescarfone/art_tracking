@@ -22,14 +22,15 @@ last_updated: '2026-10-26'
 # Marcos Acosta
 
 ## Summary
-Marcos Acosta (b. 1980, Córdoba, Argentina) is a Denver-based artist working mainly in landscape-based painting and drawing. He is represented by K Contemporary (Denver) and listed with Hexton Gallery (Aspen), and also shows with Galería Hilario Galguera (Mexico City). Identity is matched across several gallery and database bios; I found no personal website or Instagram. The tracker's note about a RedLine residency is unverified (the RedLine page fetch timed out).
+Marcos Acosta (b. 1980, Córdoba, Argentina) is a Denver-based artist working mainly in landscape-based painting and drawing. He is represented by K Contemporary (Denver) and listed with Hexton Gallery (Aspen), and also shows with Galería Hilario Galguera (Mexico City). RedLine's current-artists page names him in its 2026-2028 resident cohort. Identity is matched across several gallery and database bios; I found no personal website or Instagram. The RedLine match rests on the name and his place on the Denver gallery roster; I did not open his dedicated RedLine page to confirm it describes the same person.
 
 ## Practice & Style
-Landscape-based painting and drawing, with some sculpture, engraving, video and installation. His 2026 solo showed Colorado and Southwestern landscapes on canvas and paper. The Denver Post feature title describes his work as "The Wild, Metaphysical West." He earned a BFA at the University of Córdoba (2003; Hexton gives 1998-2003), studying under Carlos Peiteado. No MFA was found.
+Landscape-based painting and drawing, with some sculpture, engraving, video and installation. K Contemporary says his work combines landscapes with abstract forms, with painting and drawing as the foundation of his practice. His 2026 solo showed Colorado and Southwestern landscapes on canvas and paper. The Denver Post feature title describes his work as "The Wild, Metaphysical West." He earned a BFA at the University of Córdoba (2003; Hexton gives 1998-2003), studying under Carlos Peiteado. No MFA was found.
 
 ## Exhibitions
 ### Current & Upcoming
-None found as of 2026-10-26.
+- **RedLine resident artist, 2026-2028** (Denver); no specific studio or open-studios show found yet.
+- No other current or upcoming exhibitions found as of 2026-10-26.
 
 ### Past
 - **Solo:** "Fragile Thought," K Contemporary, Denver, 14 March - 25 April 2026.
@@ -43,14 +44,15 @@ None found as of 2026-10-26.
 ## Press & Recognition
 - The Denver Post ran a two-page Life & Culture spread, "The Wild, Metaphysical West of Marcos Acosta," by critic Ray Rinaldi (date not given).
 - K Contemporary's press page also points to an AATONAU article.
-- No grants, awards, museum acquisitions, or MCA Denver / Denver Art Museum / Skowhegan / Anderson Ranch connections were found.
+- Selected for RedLine's 2026-2028 resident artist cohort.
+- No grants, awards, museum acquisitions, or MCA Denver / Denver Art Museum / Skowhegan / Anderson Ranch connections were found (not re-searched in this update).
 - A Biennial of the Americas page for a Costa Rica delegate of the same name describes a career mostly in Argentina and Latin America; probably the same artist, unconfirmed.
 
 ## Market Signals
-Represented by three galleries across Denver, Aspen and Mexico City, with a run of US and Mexican fair appearances since 2023 via Hexton. No public prices found.
+Represented by three galleries across Denver, Aspen and Mexico City, with a run of US and Mexican fair appearances since 2023 via Hexton. A two-year RedLine residency deepens his local footprint. No public prices found.
 
 ## Why Watch
-A mid-career Argentine-born painter, not an MFA-pipeline emerging artist, whose 2026 brought a first Denver solo, major Denver Post coverage and an Arvada Center show. Open questions: RedLine residency status and any institutional acquisitions.
+A mid-career Argentine-born painter, not an MFA-pipeline emerging artist, whose 2026 brought a first Denver solo, major Denver Post coverage, an Arvada Center show and a RedLine residency. Watch for a RedLine studio or open-studios show, institutional acquisitions, and any NADA or Untitled appearance.
 
 ## Sources
 - https://kcontemporaryart.com/artist/marcos-acosta
@@ -61,6 +63,9 @@ A mid-career Argentine-born painter, not an MFA-pipeline emerging artist, whose 
 - https://www.mutualart.com/Artist/Marcos-Acosta/1175CFA5FC3EC7B1/Biography
 - https://www.artsy.net/artist/marcos-acosta/cv
 - https://www.biennialoftheamericas.org/costaricadelegates/marcosacosta
+- https://www.redlineart.org/current-artists
+- https://www.redlineart.org/marcos-acosta-2026-2028-resident-artist
 
 ## Changelog
 - 2026-10-26: Created initial profile from research on gallery representation, 2026 exhibitions, fairs and press; RedLine residency remains unverified.
+- 2026-10-26: Confirmed RedLine 2026-2028 residency via RedLine's current-artists page, resolving the earlier unverified note, and raised momentum to rising.

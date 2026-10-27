@@ -56,3 +56,41 @@ echo "CLAUDE_KEY=sk-ant-..." > .env
 Each step's model is set under `settings.models`. Defaults: Haiku 5.5 for extract, decide and
 curate; Sonnet 5.5 for research and write. Each run prints an estimated cost. Measured: about
 $0.015 per curator check and about $0.10 per researched artist.
+
+## Web app
+
+A minimal gallery-style site: every tracked artist in the sidebar, their profile on the right, and a
+Refresh button that re-runs research and rewrites that profile.
+
+- `server.py`: FastAPI. `GET /api/artists`, `GET /api/artists/{slug}`, and
+  `POST /api/artists/{slug}/refresh`, which streams progress as NDJSON and needs the `X-Admin-Token` header.
+- `web/`: Vite + React frontend.
+- `tracker/storage.py`: local files in development, a private Vercel Blob store when deployed
+  (the Vercel filesystem is read-only).
+
+### Run locally
+
+```bash
+.venv/bin/uvicorn server:app --reload --port 8000     # terminal 1
+cd web && npm install && npm run dev                  # terminal 2 → http://localhost:5173
+```
+
+Locally, refresh needs no token unless `ADMIN_TOKEN` is set.
+
+### Deploy to Vercel
+
+1. Import the GitHub repo in Vercel. `vercel.json` defines two services, `web` (Vite) and `api`
+   (FastAPI). Vercel Services is in beta.
+2. Storage → Create → Blob, choose **private**, and connect it to the project.
+3. Project → Settings → Environment Variables: add `CLAUDE_KEY` and `ADMIN_TOKEN` (any long
+   random string; you type it once in the browser when you first click Refresh).
+4. Copy your local data into Blob: add the store's `BLOB_READ_WRITE_TOKEN` to `.env`, then run
+   `.venv/bin/python main.py --push`.
+5. Redeploy.
+
+Once deployed, the site's data lives in Blob. To make new pipeline runs show up on the site, run the
+pipeline directly against Blob with `STORAGE=blob .venv/bin/python main.py`. Alternatively, run
+`--pull` before a local run and `--push` after; `--push` overwrites Blob, so pull first or you'll lose
+refreshes made on the site.
+
+Hobby plans cap functions at 300 seconds. A refresh usually takes 25 seconds to 2.5 minutes.
