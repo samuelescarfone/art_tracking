@@ -11,8 +11,8 @@ import threading
 
 import anthropic
 from dotenv import load_dotenv
-from fastapi import FastAPI, Header, HTTPException
-from fastapi.responses import StreamingResponse
+from fastapi import FastAPI, Header, HTTPException, Request
+from fastapi.responses import JSONResponse, StreamingResponse
 
 from tracker import pipeline, profiles
 from tracker.llm import Claude, ClaudeError
@@ -24,6 +24,23 @@ HEARTBEAT_SECONDS = 10
 load_dotenv()  # local dev: picks up ADMIN_TOKEN / CLAUDE_KEY from .env (no-op on Vercel)
 
 app = FastAPI(title="Art Tracker")
+
+STORAGE_HINTS = {
+    "BlobCredentialsError": "No Blob store is connected. In Vercel: Storage → create a private Blob "
+                            "store → connect it to this project, then redeploy.",
+    "BlobAccessError": "The Blob store rejected access. It must be a private store connected to "
+                       "this project.",
+    "BlobStoreNotFoundError": "The connected Blob store no longer exists. Reconnect a store and redeploy.",
+}
+
+
+@app.exception_handler(Exception)
+async def explain_errors(_: Request, exc: Exception) -> JSONResponse:
+    """Return a readable message (shown in the UI) instead of a bare 500."""
+    name = type(exc).__name__
+    hint = STORAGE_HINTS.get(name)
+    detail = f"{hint} ({name}: {exc})" if hint else f"{name}: {exc}"
+    return JSONResponse({"detail": detail}, status_code=500)
 
 
 def _summary(entry: dict) -> dict:
@@ -51,7 +68,20 @@ def _check_token(token: str | None) -> None:
 
 @app.get("/api/health")
 def health() -> dict:
-    return {"ok": True, "storage": get_store().kind}
+    """Also probes storage, so setup problems show up here first."""
+    store = get_store()
+    status = {"ok": True, "storage": store.kind,
+              "claude_key_set": bool(os.environ.get("CLAUDE_KEY") or os.environ.get("ANTHROPIC_API_KEY")),
+              "admin_token_set": bool(os.environ.get("ADMIN_TOKEN"))}
+    try:
+        registry = Registry()
+        status["artists"] = len(registry.artists)
+        if not registry.artists:
+            status["hint"] = "Storage works but is empty: run `python main.py --push` locally."
+    except Exception as e:
+        name = type(e).__name__
+        status.update(ok=False, storage_error=f"{name}: {e}", hint=STORAGE_HINTS.get(name, ""))
+    return status
 
 
 @app.get("/api/artists")
