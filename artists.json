@@ -1,0 +1,85 @@
+{
+  "updated": "2026-10-26",
+  "artists": [
+    {
+      "slug": "marcos-acosta",
+      "name": "Marcos Acosta",
+      "aliases": [],
+      "one_liner": "Argentine-born Denver landscape painter (b. 1980); K Contemporary solo 'Fragile Thought' (2026), Denver Post feature, Arvada Center group show.",
+      "affiliations": [
+        "K Contemporary",
+        "RedLine Contemporary Art Center (current residents)"
+      ],
+      "momentum": "rising",
+      "priority": 5,
+      "first_seen": "2026-10-26",
+      "last_updated": "2026-10-26",
+      "status": "active",
+      "file": "artifacts/artists/marcos-acosta.md",
+      "sources": [
+        {
+          "source_id": "k-contemporary",
+          "source_name": "K Contemporary",
+          "tier": "roster",
+          "url": "https://kcontemporaryart.com/artist/marcos-acosta",
+          "context": "name derived from URL slug",
+          "first_seen": "2026-10-26"
+        },
+        {
+          "source_id": "redline-current",
+          "source_name": "RedLine Contemporary Art Center (current residents)",
+          "tier": "pipeline",
+          "url": "https://www.redlineart.org/current-artists",
+          "context": "Current RedLine resident artist (2025-2027/2026-2028 cohorts)",
+          "first_seen": "2026-10-26"
+        }
+      ],
+      "medium": [
+        "painting",
+        "drawing",
+        "sculpture",
+        "engraving",
+        "video",
+        "installation"
+      ],
+      "based_in": "Denver, Colorado"
+    },
+    {
+      "slug": "sterling-crispin",
+      "name": "Sterling Crispin",
+      "aliases": [
+        "DJ Mediafire"
+      ],
+      "one_liner": "Maui-born conceptual and on-chain generative artist, ex-Apple researcher; RedLine Denver resident 2008–11, studied at RMCAD",
+      "affiliations": [
+        "RedLine Contemporary Art Center (alumni)",
+        "Robischon Gallery"
+      ],
+      "momentum": "established",
+      "priority": 5,
+      "first_seen": "2026-10-26",
+      "last_updated": "2026-10-26",
+      "file": "artifacts/dropped/sterling-crispin.md",
+      "sources": [
+        {
+          "source_id": "redline-alumni",
+          "source_name": "RedLine Contemporary Art Center (alumni)",
+          "tier": "pipeline",
+          "url": "https://www.redlineart.org/alumni-artists",
+          "context": "2022-past Alumni",
+          "first_seen": "2026-10-26"
+        },
+        {
+          "source_id": "robischon",
+          "source_name": "Robischon Gallery",
+          "tier": "roster",
+          "url": "https://robischongallery.com/artist/sterling-crispin",
+          "context": "name derived from URL slug",
+          "first_seen": "2026-10-26"
+        }
+      ],
+      "status": "dropped",
+      "dropped_reason": "The collector excludes digital art, generative/code-based and AI art, and conceptual art, and Sterling Crispin's main body of work falls under those exclusions (on-chain generative art, smart contracts, AI, and conceptual practice)."
+    }
+  ]
+}

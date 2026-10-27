@@ -1,0 +1,99 @@
+settings:
+  models:                          # claude-haiku-5-5 < claude-sonnet-5-5 < claude-opus-5-5 in cost
+    extract: claude-haiku-5-5      # pull artist names out of page text
+    decide: claude-haiku-5-5       # create / update / skip against artists.json
+    curate: claude-haiku-5-5       # add / reject against your preferences
+    research: claude-sonnet-5-5    # web research per artist
+    write: claude-sonnet-5-5       # merge research into the profile
+  max_artists_per_run: 10          # research budget per run; 0 = no limit
+  max_curations_per_run: 40        # curator checks per run (~$0.02 each); 0 = no limit
+  refresh_after_days: 14           # re-research a profile this old even with no new mentions
+  max_web_searches_per_artist: 4
+  max_web_fetches_per_artist: 4
+  max_web_searches_per_curation: 2
+  request_delay_seconds: 1.0       # politeness delay between page fetches
+
+# Tiers:
+#   roster   - gallery rosters; can create profiles
+#   pipeline - residencies / MFA programs; can create profiles
+# kind:
+#   sitemap   - artist URLs pulled from sitemap.xml, name derived from the URL slug
+#   links     - anchor text of links whose href matches `pattern`
+#   page_text - visible page text; Claude extracts the artist names
+sources:
+  - id: robischon
+    name: Robischon Gallery
+    tier: roster
+    kind: sitemap
+    url: https://robischongallery.com/sitemap.xml
+    pattern: "/artist/([^/]+)/?$"
+
+  - id: k-contemporary
+    name: K Contemporary
+    tier: roster
+    kind: sitemap
+    url: https://kcontemporaryart.com/sitemap.xml
+    pattern: "/artist/([^/]+)/?$"
+
+  - id: david-b-smith
+    name: David B. Smith Gallery
+    tier: roster
+    kind: links
+    url: https://www.davidbsmithgallery.com/artists/
+    pattern: "^/artists/[^/]+/"
+
+  - id: rule
+    name: Rule Gallery
+    tier: roster
+    kind: links
+    url: https://rulegallery.com/artists-rule-gallery/
+    pattern: "rulegallery\\.com/artist/[^/]+/?$"
+
+  - id: redline-current
+    name: RedLine Contemporary Art Center (current residents)
+    tier: pipeline
+    kind: page_text
+    url: https://www.redlineart.org/current-artists
+    context: Current RedLine resident cohorts (2025-2027 and 2026-2028)
+
+  - id: redline-alumni
+    name: RedLine Contemporary Art Center (alumni)
+    tier: pipeline
+    kind: page_text
+    url: https://www.redlineart.org/alumni-artists
+    context: RedLine resident alumni, grouped by cohort years
+
+  # Blocks scripts (HTTP 403). Anderson Ranch is still checked per artist during research.
+  - id: anderson-ranch
+    name: Anderson Ranch Arts Center
+    tier: pipeline
+    kind: page_text
+    url: https://www.andersonranch.org/
+    enabled: false
+
+  # Fill in the current thesis-show page URL and set enabled: true.
+  - id: cu-boulder-mfa
+    name: CU Boulder MFA thesis show
+    tier: pipeline
+    kind: page_text
+    url: ""
+    enabled: false
+
+  - id: du-mfa
+    name: University of Denver MFA thesis show
+    tier: pipeline
+    kind: page_text
+    url: ""
+    enabled: false
+
+# Never crawled as rosters. Research checks every tracked artist against these.
+signals:
+  validators:
+    - MCA Denver
+    - Denver Art Museum
+  national:
+    - NADA art fairs
+    - Untitled Art fair (Miami Beach)
+    - Skowhegan School of Painting & Sculpture (alumni)
+    - Anderson Ranch Arts Center (residency, benefit auction)
+    - MFA programs at Yale, UCLA, Columbia, RISD, CU Boulder, University of Denver

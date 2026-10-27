@@ -1,0 +1,8 @@
+anthropic>=2.3.0
+requests>=2.32
+beautifulsoup4>=4.12
+pyyaml>=6.0
+python-dotenv>=1.0
+fastapi>=0.115
+uvicorn>=0.30
+vercel-blob>=0.5,<0.6
